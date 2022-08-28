@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./stylesheets/all.css" />
+    <script
+      src="https://kit.fontawesome.com/48f04622d4.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- 導覽列 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0">
+      <div class="container p-0">
+        <a
+          class="navbar-brand py-13 ps-lg-0 me-lg-0 ms-lg-nav-lr m-auto ps-56"
+          href="#"
+          ><img
+            src="./stylesheets/pics/title-icon.png"
+            alt=""
+            style="width: 120px; height: 54px"
+        /></a>
+        <button
+          class="navbar-toggler me-3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 ms-auto mb-lg-0 me-nav-lr">
+            <li class="nav-item">
+              <a class="nav-link px-0" aria-current="page" href="#"
+                ><i class="fa-solid fa-mountain pe-2"></i>找景點</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-0" href="#"
+                ><i class="fa-solid fa-utensils pe-2"></i>找美食</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-0" href="#"
+                ><i class="fa-solid fa-bed pe-2"></i>找旅宿</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-0" href="#"
+                ><i class="fa-solid fa-calendar-week pe-2"></i>找活動</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-0" href="#"
+                ><i class="fa-solid fa-person-biking pe-2"></i>找自行車道</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link px-0" href="#"
+                ><i class="fa-solid fa-bus pe-2"></i>找交通</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- header -->
+    <header
+      class="header"
+      style="background-image: url(./stylesheets/pics/header.png)"
+    >
+      <div class="container pt-88 pt-lg-157">
+        <div class="row justify-content-center">
+          <div class="col col-lg-8 col-12">
+            <h1
+              class="text-white fw-bold mb-32 mb-lg-27"
+              style="text-shadow: 0px 3px 2px rgba(0, 0, 0, 0.25)"
+            >
+              一起來場說走就走<br class="d-lg-none" />的台灣之旅吧！
+            </h1>
+          </div>
+          <div class="col col-lg-2"></div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col col-lg-2 col-6 mb-3">
+            <select class="form-select" aria-label="Default select example">
+              <option selected class="d-none">找縣市</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="col col-lg-2 col-6">
+            <select class="form-select" aria-label="Default select example">
+              <option selected class="d-none">找分類</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="col col-lg-4 col-12 mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="keyWord"
+              placeholder="找關鍵字"
+            />
+          </div>
+          <div class="col col-lg-2 col-12">
+            <button class="btn btn-dark w-100">
+              <i class="fa-solid fa-magnifying-glass pe-2"></i>搜尋
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section style="position: relative">
+      <div class="container overflow-hidden">
+        <h4 class="lh-14 mb-33 mb-lg-6 mt-60 text-center fw-bold">
+          <span style="position: relative"
+            >尋找旅遊靈感<svg
+              width="66"
+              height="64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="vector-1"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M34.5117.2622c6.3419 1.2746 8.7431 8.9285 13.9715 12.7224 5.2151 3.7843 13.5207 3.571 16.4035 9.3189 2.922 5.8261-.6523 12.6093-2.2369 18.9273-1.7214 6.8635-1.7615 15.012-7.366 19.361-5.6379 4.375-13.7366 3.7331-20.7721 2.4737-6.1807-1.1063-11.4911-4.671-15.9722-9.0509-3.9634-3.874-5.1099-9.3603-7.809-14.1932C7.1289 33.3725-.993 28.2959.1004 20.9979c1.0804-7.2115 9.3711-10.819 15.6367-14.5946C21.5139 2.9223 27.8926-1.068 34.5117.2622Z"
+                fill="#ABC6FA"
+              /></svg
+          ></span>
+        </h4>
+        <ul
+          class="row row-cols-2 row-cols-lg-5 row-cols-lg-12 gx-lg-0 gx-30 gy-2 list-unstyled mb-32 mb-lg-5"
+        >
+          <li class="col text-center tab">
+            <a class="mb-0 py-li h5 d-block active" aria-current="page" href="#"
+              ><i class="fa-solid fa-mountain pe-2"></i>找景點</a
+            >
+          </li>
+          <li class="col text-center tab">
+            <a class="mb-0 py-li h5 d-block" href="#"
+              ><i class="fa-solid fa-utensils pe-2"></i>找美食</a
+            >
+          </li>
+          <li class="col text-center tab">
+            <a class="mb-0 py-li h5 d-block" href="#"
+              ><i class="fa-solid fa-bed pe-2"></i>找旅宿</a
+            >
+          </li>
+          <li class="col text-center tab">
+            <a class="mb-0 py-li h5 d-block" href="#"
+              ><i class="fa-solid fa-calendar-week pe-2"></i>找活動</a
+            >
+          </li>
+          <li class="col text-center tab">
+            <a class="mb-0 py-li h5 d-block" href="#"
+              ><i class="fa-solid fa-person-biking pe-2"></i>找自行車道</a
+            >
+          </li>
+        </ul>
+        <div
+          class="row row-cols-1 row-cols-md-2 row-cols-lg-4 gx-30 gy-13 gy-lg-4"
+        >
+          <div class="col">
+            <div class="card w-100">
+              <img
+                src="https://images.unsplash.com/photo-1585938389612-a552a28d6914?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body p-20">
+                <h5 class="card-title fw-bold lh-14 mb-12">陽明山國家公園</h5>
+                <p class="card-text text-gray mb-12">
+                  <i class="fa-solid fa-location-dot pe-2"></i>臺北市
+                </p>
+                <span class="badge rounded-pill bg-primary text-gray"
+                  >自然風景類</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card w-100">
+              <img
+                src="https://images.unsplash.com/photo-1585938389612-a552a28d6914?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body p-20">
+                <h5 class="card-title fw-bold lh-14 mb-12">陽明山國家公園</h5>
+                <p class="card-text text-gray mb-12">
+                  <i class="fa-solid fa-location-dot pe-2"></i>臺北市
+                </p>
+                <span class="badge rounded-pill bg-primary text-gray"
+                  >自然風景類</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card w-100">
+              <img
+                src="https://images.unsplash.com/photo-1585938389612-a552a28d6914?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body p-20">
+                <h5 class="card-title fw-bold lh-14 mb-12">陽明山國家公園</h5>
+                <p class="card-text text-gray mb-12">
+                  <i class="fa-solid fa-location-dot pe-2"></i>臺北市
+                </p>
+                <span class="badge rounded-pill bg-primary text-gray"
+                  >自然風景類</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card w-100">
+              <img
+                src="https://images.unsplash.com/photo-1585938389612-a552a28d6914?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body p-20">
+                <h5 class="card-title fw-bold lh-14 mb-12">陽明山國家公園</h5>
+                <p class="card-text text-gray mb-12">
+                  <i class="fa-solid fa-location-dot pe-2"></i>臺北市
+                </p>
+                <span class="badge rounded-pill bg-primary text-gray"
+                  >自然風景類</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card w-100">
+              <img
+                src="https://images.unsplash.com/photo-1585938389612-a552a28d6914?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body p-20">
+                <h5 class="card-title fw-bold lh-14 mb-12">陽明山國家公園</h5>
+                <p class="card-text text-gray mb-12">
+                  <i class="fa-solid fa-location-dot pe-2"></i>臺北市
+                </p>
+                <span class="badge rounded-pill bg-primary text-gray"
+                  >自然風景類</span
+                >
+              </div>
+            </div>
+          </div><div class="col">
+            <div class="card w-100">
+              <img
+                src="https://images.unsplash.com/photo-1585938389612-a552a28d6914?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body p-20">
+                <h5 class="card-title fw-bold lh-14 mb-12">陽明山國家公園</h5>
+                <p class="card-text text-gray mb-12">
+                  <i class="fa-solid fa-location-dot pe-2"></i>臺北市
+                </p>
+                <span class="badge rounded-pill bg-primary text-gray"
+                  >自然風景類</span
+                >
+              </div>
+            </div>
+          </div><div class="col">
+            <div class="card w-100">
+              <img
+                src="https://images.unsplash.com/photo-1585938389612-a552a28d6914?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body p-20">
+                <h5 class="card-title fw-bold lh-14 mb-12">陽明山國家公園</h5>
+                <p class="card-text text-gray mb-12">
+                  <i class="fa-solid fa-location-dot pe-2"></i>臺北市
+                </p>
+                <span class="badge rounded-pill bg-primary text-gray"
+                  >自然風景類</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card w-100">
+              <img
+                src="https://images.unsplash.com/photo-1585938389612-a552a28d6914?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body p-20">
+                <h5 class="card-title fw-bold lh-14 mb-12">陽明山國家公園</h5>
+                <p class="card-text text-gray mb-12">
+                  <i class="fa-solid fa-location-dot pe-2"></i>臺北市
+                </p>
+                <span class="badge rounded-pill bg-primary text-gray"
+                  >自然風景類</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center mt-3 mt-lg-7">
+          <button class="btn btn-dark">更多景點</button>
+        </div>
+      </div>
+
+
+      <svg
+        width="388"
+        height="577"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="vector-2"
+      >
+        <path
+          opacity=".1"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M57.9796 55.4538C127.617 37.4743 199.227-23.0926 263.37 9.4381c62.79 31.8447 58.593 122.9089 79.054 190.2739 19.977 65.773 60.477 132.218 38.698 197.417-21.737 65.07-89.421 100.853-149.438 134.088-53.627 29.697-112.408 44.072-173.7044 44.859-62.0185.795-121.8855-11.86-176.9736-40.359-63.382-32.789-133.191-67.973-160.147-134.046-27.602-67.66-21.236-151.755 18.547-213.048 37.106-57.171 115.185-63.592 178.0683-89.8785C-36.1752 79.3693 9.3376 68.0126 57.9796 55.4538Z"
+          fill="#1E629C"
+        />
+      </svg>
+      <svg
+        width="224"
+        height="292"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="vector-3 d-lg-block d-none"
+      >
+        <path
+          opacity=".5"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M359.813 124.439c-1.724 34.618-27.498 62.218-50.777 88.088-20.335 22.598-46.051 37.266-73.665 50.203-30.405 14.245-60.68 31.613-94.141 28.417-37.168-3.552-73.3896-19.457-98.5248-46.824-26.1521-28.475-49.063-67.426-41.0322-105.126 7.85-36.851 50.639-52.6219 79.7831-76.7879 19.9579-16.549 39.5139-31.5412 63.3419-41.8906C170.146 9.5093 195.661-.3994 223.299.803c33.74 1.4679 69.994 4.6826 94.923 27.2602 26.67 24.154 43.373 60.5895 41.591 96.3758Z"
+          fill="#D8C6F1"
+        />
+      </svg>
+    </section>
+     
+    <footer class="bg-secondary text-center py-2 mt-80">
+      <p class="mb-0">Copyright © 2021  Taiwan Travel. All rights reserved.</p>
+      <p class="mb-0">UI Design：Ya Chu Hsu | Front-end：Mingyo</p>
+    </footer>
+    
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

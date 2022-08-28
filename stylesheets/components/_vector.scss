@@ -1,0 +1,23 @@
+.vector-1 {
+    position: absolute;
+    top: -15px;
+    left: -18px;
+    z-index: -1;
+}
+.vector-2 {
+    position: absolute;
+    top: 237px;
+    left: 0;
+    z-index: -1;
+}
+.vector-3 {
+    position: absolute;
+    top: 758px;
+    right: 0;
+    z-index: -1;
+}
+@media (min-width: 992px) {
+    .vector-2 {
+        top: 325px;
+    }
+}

@@ -1,0 +1,21 @@
+.tab {
+  a {
+    background-color: $gray-200;
+    border-radius: 4px;
+  }
+  .active {
+    background-color: $secondary;
+  }
+}
+@media (min-width: 992px) {
+  .tab {
+    a {
+      background-color: transparent;
+      border-radius: 0;
+    }
+    .active {
+      background-color: transparent;
+      box-shadow: inset 0px -2px 0px #6d89c5;
+    }
+  }
+}
