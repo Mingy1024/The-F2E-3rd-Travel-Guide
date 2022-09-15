@@ -2,7 +2,7 @@
 // ------ 初始化
 function init() {
   getAllTour();
-  getApiResponse();
+  getOriginData();
 }
 
 
@@ -47,7 +47,7 @@ function getAuthorizationHeader() {
 }
 
 // 呼叫 API 服務取得欲顯示在初始畫面的資料並進行渲染
-function getApiResponse() {
+function getOriginData() {
   axios.get(`https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot?%24top=${dataNum}&%24format=JSON`,{
       headers: getAuthorizationHeader()
     })
@@ -92,7 +92,7 @@ moreData.addEventListener("click",function(e){
   dataNum += 20;
   console.log(dataNum);
   if(citySelect.value == "" && categorySelect.value == "" && txt.value == ""){
-    getApiResponse();
+    getOriginData();
   }
   else {
     renderData(); 
