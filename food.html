@@ -37,7 +37,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mb-2 ms-auto mb-lg-0 me-nav-lr">
             <li class="nav-item">
-              <a class="nav-link px-0" aria-current="page" href="./index.html1"
+              <a class="nav-link px-0" aria-current="page" href="./index.html"
                 ><i class="fa-solid fa-mountain pe-2"></i>找景點</a
               >
             </li>
@@ -89,19 +89,13 @@
         </div>
         <div class="row justify-content-center">
           <div class="col col-lg-2 col-6 mb-3">
-            <select class="form-select" aria-label="Default select example">
-              <option selected class="d-none">找縣市</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select class="form-select citySelect" aria-label="citySelect">
+              
             </select>
           </div>
           <div class="col col-lg-2 col-6">
-            <select class="form-select" aria-label="Default select example">
-              <option selected class="d-none">找分類</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select class="form-select categorySelect" aria-label="categorySelect">
+
             </select>
           </div>
           <div class="col col-lg-4 col-12 mb-3">
@@ -363,5 +357,7 @@
     </footer>
 
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+    <script src="./food.js"></script>
   </body>
 </html>
