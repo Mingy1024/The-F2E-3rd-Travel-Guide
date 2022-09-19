@@ -4,6 +4,8 @@ const cityCategory = {};
 const categorySelect = document.querySelector('.categorySelect');
 const citySelect = document.querySelector('.citySelect');
 const foodList = document.querySelector('.foodList');
+const moreData = document.querySelector('.moreData');
+let dataNum = 30;
 
 // API認證
 function getAuthorizationHeader() {
@@ -77,7 +79,7 @@ function getAllCity(){
 
 function renderCity(){
     const cityCategoryAry = Object.keys(cityCategory);
-    let str = `<option selected class="d-none">找縣市</option>`;
+    let str = `<option selected class="d-none" value="">找縣市</option>`;
     cityCategoryAry.forEach((item) =>{
         str += `<option value="${item}">${item}</option>`;
     })
@@ -94,7 +96,7 @@ function renderCategory(){
 } 
 
 function getOriginData(){
-    axios.get(`https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant?%24top=30&%24format=JSON`,{
+    axios.get(`https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant?%24top=${dataNum}&%24format=JSON`,{
         headers: getAuthorizationHeader()
     })
     .then((res) =>{
@@ -130,6 +132,13 @@ function getOriginData(){
         console.log(err);
     })
 }
+
+moreData.addEventListener("click",function(e){
+    dataNum += 20;
+    if(citySelect.value == "" && categorySelect.value == ""){
+        getOriginData();
+    }
+})
 
 function init(){
     getAllFood();
