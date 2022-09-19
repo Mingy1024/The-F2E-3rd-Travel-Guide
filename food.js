@@ -3,6 +3,8 @@ const foodCategory = {};
 const cityCategory = {};
 const categorySelect = document.querySelector('.categorySelect');
 const citySelect = document.querySelector('.citySelect');
+const foodList = document.querySelector('.foodList');
+
 // API認證
 function getAuthorizationHeader() {
     const parameter = {
@@ -91,8 +93,47 @@ function renderCategory(){
     categorySelect.innerHTML = str;
 } 
 
+function getOriginData(){
+    axios.get(`https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant?%24top=30&%24format=JSON`,{
+        headers: getAuthorizationHeader()
+    })
+    .then((res) =>{
+        const thisData = res.data;
+        let str = "";
+        thisData.forEach(function(item){
+            if(item.Picture.PictureUrl1 !== undefined && item.City !== undefined){
+                str += `<div class="col">
+                            <div class="card w-100 h-100">
+                              <img
+                                src="${item.Picture.PictureUrl1}"
+                                class="card-img-top"
+                                alt="${item.Picture.PictureDescription1}"
+                                style="height: 200px; object-fit: cover;"
+                              />
+                              <div class="card-body p-20">
+                                <h5 class="card-title fw-bold lh-14 mb-12">${item.RestaurantName}</h5>
+                                <p class="card-text text-gray mb-12">
+                                  <i class="fa-solid fa-location-dot pe-2"></i>${item.City}
+                                </p>
+                                <p class="card-text text-gray mb-12 d-flex" style="position: relative">
+                                  <i class="fa-solid fa-clock" style="position: absolute; top:5px;"></i>
+                                  <span class="ps-20">${item.OpenTime}</span>
+                                </p>
+                              </div>
+                            </div>
+                       </div>`;
+            }
+        })
+        foodList.innerHTML = str;
+    })
+    .catch((err) =>{
+        console.log(err);
+    })
+}
+
 function init(){
     getAllFood();
     getAllCity();
+    getOriginData();
 }
 init();
