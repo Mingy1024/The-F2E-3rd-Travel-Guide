@@ -1,3 +1,4 @@
+
 // 選擇器設定
 const foodCategory = {};
 const cityCategory = {};
@@ -5,7 +6,17 @@ const categorySelect = document.querySelector('.categorySelect');
 const citySelect = document.querySelector('.citySelect');
 const foodList = document.querySelector('.foodList');
 const moreData = document.querySelector('.moreData');
+const txt = document.querySelector('.txt');
+const send = document.querySelector('.send');
 let dataNum = 30;
+
+// ------ 初始化
+function init(){
+  getAllFood();
+  getOriginData();
+}
+
+init();
 
 // API認證
 function getAuthorizationHeader() {
@@ -35,6 +46,21 @@ function getAuthorizationHeader() {
       });
 }
 
+send.addEventListener("click",function(e){
+  dataNum = 30;
+  renderData();
+})
+
+moreData.addEventListener("click",function(e){
+  dataNum += 20;
+  if(citySelect.value == "" && categorySelect.value == "" && txt.value == ""){
+    getOriginData();
+  }
+  else{
+    renderData();
+  }
+})
+
 function getAllFood(){
     axios.get("https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant?%24format=JSON",{
         headers: getAuthorizationHeader()
@@ -55,36 +81,6 @@ function getAllFood(){
         renderCategory();
     })
 } 
-
-function getAllCity(){
-    axios.get("https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant?%24format=JSON",{
-        headers: getAuthorizationHeader()
-    })
-    .then((res) =>{
-        const thisData = res.data;
-        thisData.forEach((item) =>{
-            if(item.City == undefined){
-                return;
-            }
-            else if(cityCategory[item.City] == undefined){
-                cityCategory[item.City] = 1;
-            }
-            else{
-                cityCategory[item.City] += 1; 
-            }
-        })
-        renderCity();
-    })
-} 
-
-function renderCity(){
-    const cityCategoryAry = Object.keys(cityCategory);
-    let str = `<option selected class="d-none" value="">找縣市</option>`;
-    cityCategoryAry.forEach((item) =>{
-        str += `<option value="${item}">${item}</option>`;
-    })
-    citySelect.innerHTML = str;
-}
 
 function renderCategory(){
     const foodCategoryAry = Object.keys(foodCategory);
@@ -133,16 +129,53 @@ function getOriginData(){
     })
 }
 
-moreData.addEventListener("click",function(e){
-    dataNum += 20;
-    if(citySelect.value == "" && categorySelect.value == ""){
-        getOriginData();
-    }
-})
-
-function init(){
-    getAllFood();
-    getAllCity();
-    getOriginData();
+function renderData(){
+    const city = citySelect.value;
+    const category = categorySelect.value;
+    const keyWord = txt.value;
+    axios.get(`https://tdx.transportdata.tw/api/basic/v2/Tourism/Restaurant/${city}?%24filter=contains(Class,'${category}')%20and%20contains(RestaurantName,'${keyWord}')&%24top=${dataNum}&%24format=JSON`,{
+        headers: getAuthorizationHeader()
+    })
+    .then(function(res){
+        const thisData = res.data;
+        let str = "";
+        let count = 0;
+        thisData.forEach(function(item){
+            if(item.Picture.PictureUrl1 !== undefined){
+                str += `<div class="col">
+                                <div class="card w-100 h-100">
+                                  <img
+                                    src="${item.Picture.PictureUrl1}"
+                                    class="card-img-top"
+                                    alt="${item.Picture.PictureDescription1}"
+                                    style="height: 200px; object-fit: cover;"
+                                  />
+                                  <div class="card-body p-20">
+                                    <h5 class="card-title fw-bold lh-14 mb-12">${item.RestaurantName}</h5>
+                                    <p class="card-text text-gray mb-12">
+                                      <i class="fa-solid fa-location-dot pe-2"></i>${item.City}
+                                    </p>
+                                    <p class="card-text text-gray mb-12 d-flex" style="position: relative">
+                                      <i class="fa-solid fa-clock" style="position: absolute; top:5px;"></i>
+                                      <span class="ps-20">${item.OpenTime}</span>
+                                    </p>
+                                  </div>
+                                </div>
+                           </div>`;
+                count += 1;
+            }
+        })
+        if(count <= 8){
+          document.querySelector('.vector-2').classList.add('d-none');
+          document.querySelector('.vector-3').classList.remove('d-lg-block');
+        }
+        else{
+          document.querySelector('.vector-2').classList.remove('d-none');
+          document.querySelector('.vector-3').classList.add('d-lg-block');
+        }
+        foodList.innerHTML = str;
+    })
+    .catch(function(err){
+        console.log(err);
+    })
 }
-init();

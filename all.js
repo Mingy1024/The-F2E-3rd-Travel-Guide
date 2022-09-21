@@ -139,7 +139,7 @@ function renderCategory() {
 
 // 渲染搜尋到的資料
 function renderData() {
-  const city = citySelect.value;
+    const city = citySelect.value;
     const category = categorySelect.value;
     const keyWord = txt.value;
     axios.get(`https://tdx.transportdata.tw/api/basic/v2/Tourism/ScenicSpot/${city}?%24filter=contains(Class1,'${category}') and contains(ScenicSpotName,'${keyWord}')&%24top=${dataNum}&%24format=JSON`,{
