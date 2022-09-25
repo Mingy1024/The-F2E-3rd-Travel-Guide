@@ -155,7 +155,7 @@ function renderData(){
                                     <p class="card-text text-gray mb-12">
                                       <i class="fa-solid fa-location-dot pe-2"></i>${item.City}
                                     </p>
-                                    <p class="card-text text-gray mb-12 d-flex" style="position: relative">
+                                    <p class="card-text text-gray mb-12 d-flex" style="position: relative;">
                                       <i class="fa-solid fa-clock" style="position: absolute; top:5px;"></i>
                                       <span class="ps-20">${item.OpenTime}</span>
                                     </p>
