@@ -89,31 +89,47 @@
         </div>
         <div class="row justify-content-center">
           <div class="col col-lg-2 col-6 mb-3">
-            <select class="form-select" aria-label="Default select example">
-              <option selected class="d-none">找縣市</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select class="form-select citySelect" aria-label="citySelect">
+              <option selected class="d-none" value="">找縣市</option>
+              <option value="Taipei">臺北市</option>
+              <option value="NewTaipei">新北市</option>
+              <option value="Taoyuan">桃園市</option>
+              <option value="Hsinchu">新竹市</option>
+              <option value="HsinchuCounty">新竹縣</option>
+              <option value="MiaoliCounty">苗栗縣</option>
+              <option value="Taichung">臺中市</option>
+              <option value="ChanghuaCounty">彰化縣</option>
+              <option value="NantouCounty">南投縣</option>
+              <option value="YunlinCounty">雲林縣</option>
+              <option value="ChiayiCounty">嘉義縣</option>
+              <option value="Chiayi">嘉義市</option>
+              <option value="Tainan">臺南市</option>
+              <option value="Kaohsiung">高雄市</option>
+              <option value="PingtungCounty">屏東縣</option>
+              <option value="TaitungCounty">臺東縣</option>
+              <option value="HualienCounty">花蓮縣</option>
+              <option value="YilanCounty">宜蘭縣</option>
+              <option value="Keelung">基隆市</option>
+              <option value="KinmenCounty">金門縣</option>
+              <option value="PenghuCounty">澎湖縣</option>
+              <option value="LienchiangCounty">連江縣</option>
             </select>
           </div>
           <div class="col col-lg-2 col-6">
-            <select class="form-select" aria-label="Default select example">
-              <option selected class="d-none">找分類</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select class="form-select categorySelect" aria-label="categorySelect">
+
             </select>
           </div>
           <div class="col col-lg-4 col-12 mb-3">
             <input
               type="text"
-              class="form-control"
+              class="form-control txt"
               id="keyWord"
               placeholder="找關鍵字"
             />
           </div>
           <div class="col col-lg-2 col-12">
-            <button class="btn btn-dark w-100">
+            <button class="btn btn-dark w-100 send">
               <i class="fa-solid fa-magnifying-glass pe-2"></i>搜尋
             </button>
           </div>
