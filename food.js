@@ -1,7 +1,6 @@
 
 // 選擇器設定
 const foodCategory = {};
-const cityCategory = {};
 const categorySelect = document.querySelector('.categorySelect');
 const citySelect = document.querySelector('.citySelect');
 const foodList = document.querySelector('.foodList');
