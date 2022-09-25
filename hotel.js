@@ -1,7 +1,8 @@
 
 // 選擇器設定
 const hotelList = document.querySelector('.hotelList');
-
+const moreData = document.querySelector('.moreData');
+let dataNum = 30;
 // ------ 初始化
 function init(){
     getOriginData();
@@ -37,8 +38,13 @@ function getAuthorizationHeader() {
       });
 }
 
+moreData.addEventListener("click",function(e){
+    dataNum +=20;
+    getOriginData();
+})
+
 function getOriginData(){
-    axios.get(`https://tdx.transportdata.tw/api/basic/v2/Tourism/Hotel?%24top=30&%24format=JSON`,{
+    axios.get(`https://tdx.transportdata.tw/api/basic/v2/Tourism/Hotel?%24top=${dataNum}&%24format=JSON`,{
         headers: getAuthorizationHeader()
     })
     .then((res) =>{
